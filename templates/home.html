@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel='stylesheet' href='/static/main.css'>
+  <link type="image/x-icon" rel="shortcut icon" href="/static/images/favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
@@ -137,12 +138,8 @@
     height: 4px;
     background-color: #dcf6ff; /* Adjust the color as needed */
     transform: skew(40deg);
-    box-shadow: 2px 2px 0px #aadcec;
-    border: 1px solid #7f00e0;
-    /* animation: from-right forwards;
-    animation-duration: .5s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    width: 0; */
+    box-shadow: 2px 2px 0px var(--fill);
+    border: 1px solid var(--line);
     transition: .15s ease-in-out;
     pointer-events: none;
   }
@@ -163,8 +160,8 @@
     padding: 12px 24px 11px 24px;
     border-radius: 30px;
     background-color: transparent;
-    border: 1px solid #7f00e0;
-    color: #7f00e0;
+    border: 1px solid var(--line);
+    color: var(--line);
     font-weight: 500;
     font-size: 1.2rem;
     text-decoration: none;
@@ -182,7 +179,7 @@
     left: 0;
     bottom: 0;
     right: 0;
-    background-color: #7f00e0;
+    background-color: var(--line);
     border-radius: 30px;
     transform: translateX(-100%);
     transition: .15s ease-in-out;
@@ -210,52 +207,86 @@
   .social-icon > a > svg:hover{
     transform: scale3d(1.2, 1.2, 1.2);
   }
-  .hero {
-
+  .section-header {
+    display: flex;
+    gap: 20px;
+    align-items: center;
   }
-  .hero p {
-    margin: 20px 0;
-    color: var(--text);
-    font-weight: 300;
-    line-height: 1.5;
+  .section-header h1 {
     font-size: 2rem;
+    color: var(--text);
+    font-weight: 400;
   }
-  .hero-image {
+  .divider {
+    flex: 1;
+    height: 1px;
+    background-color: var(--line);
+  }
+  .about {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    margin-bottom: 40px;
   }
-  .hero-image > img {
-    max-width: 200px;
-    border: .5px solid rgba(41, 41, 41, 0.4);
-    border-radius: 8px;
+  .about-row-1 {
+    display: flex;
+    margin-top: 20px;
+  }
+  .about-text {
+    flex: 1;
+  }
+  .about-text p {
+    margin: 0 0 20px 0;
+    color: var(--text);
+    font-weight: 300;
+    line-height: 1.3;
+    font-size: 1rem;
+  }
+  .about-image {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .about-image > img {
+    max-width: 220px;
+    /* border: .5px solid rgba(41, 41, 41, 0.4); */
+    border: 3px solid var(--line);
+    border-radius: 110px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
     z-index: 2;
     margin: 0 auto;
-    /* animation: image-fade forwards;
-    animation-duration: 1.2s;
-    animation-delay: .5s;
-    opacity: 0; */
   }
-  @keyframes image-fade {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
+  .about-row-2 {
+    
   }
-  @keyframes from-right {
-    0% {
-      opacity: 0;
-      width: 0;
-      border: 1.5px solid #7f00e0;
-    }
-    100% {
-      opacity: 1;
-      width: 100%;
-      border: 1.5px solid #7f00e0;
-    }
+  .about-row-2 h2 {
+    font-size: 1.2rem;
+    color: var(--text);
+    font-weight: 400;
+  }
+  .about-row-2 ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .about-row-2 ul li {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    width: 100px;
+  }
+  .about-row-2 ul li svg {
+    width: 12px;
+    height: 12px;
+  }
+  .about-row-2 ul li p {
+    font-size: .9rem;
+    color: var(--text);
+    font-weight: 400;
   }
   .loading-modal {
     position: fixed;
@@ -393,27 +424,78 @@
       </div>
     </header>
     <section class="content-container">
-      <section class="hero">
-            <div class="hero-image">
-              <img src="../static/images/ryan.jpg" alt="Ryan McCallister">
-            </div>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem omnis quasi hic quis totam, fugiat porro vitae. Fugit eos culpa nisi ut, nulla labore hic, delectus ea, quas sit quae.</p>
+      <div class="section-header">
+        <h1>About me</h1>
+        <div class="divider"></div>
+      </div>
+      <section class="about">
+        <div class="about-row-1">
+          <div class="about-text">
+            <p>After serving for 5 years as a <b>Navy SEAL</b> at SEAL team 7 in <b>Coronado, CA</b>, I found my passion in software development, specifically in <b>designing</b> and <b>developing</b> creative and interactive user interfaces.</p>
+            <p>In 2020, I moved to <b>Nashville, TN</b>, and begin developing websites and mobile apps, and I am continuing to learn new technologies. Send me a <b>message</b> and lets build something together!</p>
+          </div>
+          <div class="about-image">
+            <img src="../static/images/ryan.jpg" alt="Ryan McCallister">
+          </div>
+        </div>
+        <div class="about-row-2">
+          <h2>Technologies I use:</h2>
+          <ul>
+            <li>
+              <svg width="800px" height="800px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <path d="M59 61.922c0-9.768 13.016-15.432 22.352-11.615 10.695 7.017 101.643 58.238 109.869 65.076 8.226 6.838 10.585 17.695-.559 25.77-11.143 8.074-99.712 60.203-109.31 64.73-9.6 4.526-21.952-1.632-22.352-13.088-.4-11.456 0-121.106 0-130.873zm13.437 8.48c0 2.494-.076 112.852-.216 115.122-.23 3.723 3 7.464 7.5 5.245 4.5-2.22 97.522-57.704 101.216-59.141 3.695-1.438 3.45-5.1 0-7.388C177.488 121.952 82.77 67.76 80 65.38c-2.77-2.381-7.563 1.193-7.563 5.023z" stroke="#979797" fill-rule="evenodd"/>
+              </svg>
+              <p>HTML</p>
+            </li>
+            <li>
+              <svg width="800px" height="800px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <path d="M59 61.922c0-9.768 13.016-15.432 22.352-11.615 10.695 7.017 101.643 58.238 109.869 65.076 8.226 6.838 10.585 17.695-.559 25.77-11.143 8.074-99.712 60.203-109.31 64.73-9.6 4.526-21.952-1.632-22.352-13.088-.4-11.456 0-121.106 0-130.873zm13.437 8.48c0 2.494-.076 112.852-.216 115.122-.23 3.723 3 7.464 7.5 5.245 4.5-2.22 97.522-57.704 101.216-59.141 3.695-1.438 3.45-5.1 0-7.388C177.488 121.952 82.77 67.76 80 65.38c-2.77-2.381-7.563 1.193-7.563 5.023z" stroke="#979797" fill-rule="evenodd"/>
+              </svg>
+              <p>CSS</p>
+            </li>
+            <li>
+              <svg width="800px" height="800px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <path d="M59 61.922c0-9.768 13.016-15.432 22.352-11.615 10.695 7.017 101.643 58.238 109.869 65.076 8.226 6.838 10.585 17.695-.559 25.77-11.143 8.074-99.712 60.203-109.31 64.73-9.6 4.526-21.952-1.632-22.352-13.088-.4-11.456 0-121.106 0-130.873zm13.437 8.48c0 2.494-.076 112.852-.216 115.122-.23 3.723 3 7.464 7.5 5.245 4.5-2.22 97.522-57.704 101.216-59.141 3.695-1.438 3.45-5.1 0-7.388C177.488 121.952 82.77 67.76 80 65.38c-2.77-2.381-7.563 1.193-7.563 5.023z" stroke="#979797" fill-rule="evenodd"/>
+              </svg>
+              <p>Javascript</p>
+            </li>
+            <li>
+              <svg width="800px" height="800px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <path d="M59 61.922c0-9.768 13.016-15.432 22.352-11.615 10.695 7.017 101.643 58.238 109.869 65.076 8.226 6.838 10.585 17.695-.559 25.77-11.143 8.074-99.712 60.203-109.31 64.73-9.6 4.526-21.952-1.632-22.352-13.088-.4-11.456 0-121.106 0-130.873zm13.437 8.48c0 2.494-.076 112.852-.216 115.122-.23 3.723 3 7.464 7.5 5.245 4.5-2.22 97.522-57.704 101.216-59.141 3.695-1.438 3.45-5.1 0-7.388C177.488 121.952 82.77 67.76 80 65.38c-2.77-2.381-7.563 1.193-7.563 5.023z" stroke="#979797" fill-rule="evenodd"/>
+              </svg>
+              <p>GO</p>
+            </li>
+            <li>
+              <svg width="800px" height="800px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <path d="M59 61.922c0-9.768 13.016-15.432 22.352-11.615 10.695 7.017 101.643 58.238 109.869 65.076 8.226 6.838 10.585 17.695-.559 25.77-11.143 8.074-99.712 60.203-109.31 64.73-9.6 4.526-21.952-1.632-22.352-13.088-.4-11.456 0-121.106 0-130.873zm13.437 8.48c0 2.494-.076 112.852-.216 115.122-.23 3.723 3 7.464 7.5 5.245 4.5-2.22 97.522-57.704 101.216-59.141 3.695-1.438 3.45-5.1 0-7.388C177.488 121.952 82.77 67.76 80 65.38c-2.77-2.381-7.563 1.193-7.563 5.023z" stroke="#979797" fill-rule="evenodd"/>
+              </svg>
+              <p>Tailwind-CSS</p>
+            </li>
+            <li>
+              <svg width="800px" height="800px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <path d="M59 61.922c0-9.768 13.016-15.432 22.352-11.615 10.695 7.017 101.643 58.238 109.869 65.076 8.226 6.838 10.585 17.695-.559 25.77-11.143 8.074-99.712 60.203-109.31 64.73-9.6 4.526-21.952-1.632-22.352-13.088-.4-11.456 0-121.106 0-130.873zm13.437 8.48c0 2.494-.076 112.852-.216 115.122-.23 3.723 3 7.464 7.5 5.245 4.5-2.22 97.522-57.704 101.216-59.141 3.695-1.438 3.45-5.1 0-7.388C177.488 121.952 82.77 67.76 80 65.38c-2.77-2.381-7.563 1.193-7.563 5.023z" stroke="#979797" fill-rule="evenodd"/>
+              </svg>
+              <p>React.js</p>
+            </li>
+            <li>
+              <svg width="800px" height="800px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <path d="M59 61.922c0-9.768 13.016-15.432 22.352-11.615 10.695 7.017 101.643 58.238 109.869 65.076 8.226 6.838 10.585 17.695-.559 25.77-11.143 8.074-99.712 60.203-109.31 64.73-9.6 4.526-21.952-1.632-22.352-13.088-.4-11.456 0-121.106 0-130.873zm13.437 8.48c0 2.494-.076 112.852-.216 115.122-.23 3.723 3 7.464 7.5 5.245 4.5-2.22 97.522-57.704 101.216-59.141 3.695-1.438 3.45-5.1 0-7.388C177.488 121.952 82.77 67.76 80 65.38c-2.77-2.381-7.563 1.193-7.563 5.023z" stroke="#979797" fill-rule="evenodd"/>
+              </svg>
+              <p>Swift</p>
+            </li>
+            <li>
+              <svg width="800px" height="800px" viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+                <path d="M59 61.922c0-9.768 13.016-15.432 22.352-11.615 10.695 7.017 101.643 58.238 109.869 65.076 8.226 6.838 10.585 17.695-.559 25.77-11.143 8.074-99.712 60.203-109.31 64.73-9.6 4.526-21.952-1.632-22.352-13.088-.4-11.456 0-121.106 0-130.873zm13.437 8.48c0 2.494-.076 112.852-.216 115.122-.23 3.723 3 7.464 7.5 5.245 4.5-2.22 97.522-57.704 101.216-59.141 3.695-1.438 3.45-5.1 0-7.388C177.488 121.952 82.77 67.76 80 65.38c-2.77-2.381-7.563 1.193-7.563 5.023z" stroke="#979797" fill-rule="evenodd"/>
+              </svg>
+              <p>SwiftUI</p>
+            </li>
+          </ul>
+        </div>
       </section>
+      <div class="section-header">
+        <h1>Experience</h1>
+        <div class="divider"></div>
+      </div>
     </section>
   </div>
   <div class="loading-modal">
@@ -434,7 +516,7 @@
     </svg>
   </div>
   <script>
-    window.addEventListener('load', () => {
+    document.addEventListener("DOMContentLoaded", () => {
       setTimeout(() => {
         hideLoadingModal();
       }, 2000);
@@ -463,7 +545,7 @@
     }
 
     function getAboutData() {
-      fetch('/about')
+      fetch('/content')
       .then(res => res.json())
       .then(data => {
         console.log(data);
