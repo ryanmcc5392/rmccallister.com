@@ -180,7 +180,7 @@
     bottom: 0;
     right: 0;
     background-color: var(--line);
-    border-radius: 30px;
+    /* border-radius: 30px; */
     transform: translateX(-100%);
     transition: .15s ease-in-out;
     z-index: -1;
@@ -251,8 +251,7 @@
   }
   .about-image > img {
     max-width: 220px;
-    /* border: .5px solid rgba(41, 41, 41, 0.4); */
-    border: 3px solid var(--line);
+    border: .5px solid rgba(41, 41, 41, 0.4);
     border-radius: 110px;
     box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
     z-index: 2;
@@ -286,6 +285,70 @@
   .about-row-2 ul li p {
     font-size: .9rem;
     color: var(--text);
+    font-weight: 400;
+  }
+  .experience {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+    padding-top: 20px;
+  }
+  .experience-container {
+    padding: 12px 20px 12px 20px;
+    display: flex;
+    gap: 20px;
+    border-radius: 8px;
+    transition: .15s ease-in-out;
+    border: .5px solid transparent;
+  }
+  .experience-container:hover {
+    border: .5px solid rgba(41, 41, 41, 0.1);
+    background-color: rgba(200, 203, 206, 0.05);
+  }
+  .experience-left {
+    min-width: 120px;
+  }
+  .experience-left p {
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 400;
+    line-height: 1.3;
+  }
+  .experience-right {
+    flex: 1;
+  }
+  .experience-right h2 {
+    font-size: 1.2rem;
+    color: var(--text);
+    font-weight: 500;
+    margin: 0 0 2px 0;
+  }
+  .experience-right h3 {
+    font-size: 1rem;
+    color: var(--text);
+    font-weight: 400;
+    margin: 0 0 9px 0;
+  }
+  .experience-right p {
+    font-size: .9rem;
+    color: var(--text);
+    font-weight: 400;
+  }
+  .experience-right ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+  }
+  .experience-right ul li {
+    padding: 5px 12px 4px 12px;
+    border-radius: 20px;
+    background-color: #5f00cb08;
+    color: var(--line);
+    border: .5px solid var(--line);
+    font-size: .8rem;
     font-weight: 400;
   }
   .loading-modal {
@@ -343,15 +406,15 @@
         </div>
         <div class="nav-links">
           <ul>
-            <li class="nav-list-item" onclick="transitionToSection(event)">
+            <li class="nav-list-item" data-key="about" onclick="transitionToSection(event)">
               <div class="link-banner selected"></div>
               <a href="#">About</a>
             </li>
-            <li class="nav-list-item" onclick="transitionToSection(event)">
+            <li class="nav-list-item" data-key="experience" onclick="transitionToSection(event)">
               <div class="link-banner"></div>
               <a href="#">Experience</a>
             </li>
-            <li class="nav-list-item" onclick="transitionToSection(event)">
+            <li class="nav-list-item" data-key="projects" onclick="transitionToSection(event)">
               <div class="link-banner"></div>
               <a href="#">Projects</a>
             </li>
@@ -428,7 +491,7 @@
         <h1>About me</h1>
         <div class="divider"></div>
       </div>
-      <section class="about">
+      <section class="about content-section" data-section="about-section">
         <div class="about-row-1">
           <div class="about-text">
             <p>After serving for 5 years as a <b>Navy SEAL</b> at SEAL team 7 in <b>Coronado, CA</b>, I found my passion in software development, specifically in <b>designing</b> and <b>developing</b> creative and interactive user interfaces.</p>
@@ -496,6 +559,67 @@
         <h1>Experience</h1>
         <div class="divider"></div>
       </div>
+        <section class="experience content-section" data-section="experience-section">
+          <div class="experience-container">
+            <div class="experience-left">
+              <p>2020 &#8212 Present</p>
+            </div>
+            <div class="experience-right">
+              <h2>The DailyWire</h2>
+              <h3>Junior Front End Developer</h3>
+              <p>I am currently employed with the DailyWire as a Junior Front End Developer. I work on the front end of the website, and I am responsible for creating new features and fixing bugs. I work with React, JavaScript, GO, HTML, CSS, and Tailwind-CSS.</p>
+              <ul>
+                <li>Javascript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>React</li>
+                <li>GO</li>
+                <li>Tailwind-CSS</li>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>Jira</li>
+                <li>Confluence</li>
+                <li>Figma</li>
+                <li>Agile</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience-container">
+            <div class="experience-left">
+              <p>2020 &#8212 Present</p>
+            </div>
+            <div class="experience-right">
+              <h2>The DailyWire</h2>
+              <h3>Junior Front End Developer</h3>
+              <p>I am currently employed with the DailyWire as a Junior Front End Developer. I work on the front end of the website, and I am responsible for creating new features and fixing bugs. I work with React, JavaScript, GO, HTML, CSS, and Tailwind-CSS.</p>
+              <ul>
+                <li>Javascript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+            </div>
+          </div>
+          <div class="experience-container">
+            <div class="experience-left">
+              <p>2020 &#8212 Present</p>
+            </div>
+            <div class="experience-right">
+              <h2>The DailyWire</h2>
+              <h3>Junior Front End Developer</h3>
+              <p>I am currently employed with the DailyWire as a Junior Front End Developer. I work on the front end of the website, and I am responsible for creating new features and fixing bugs. I work with React, JavaScript, GO, HTML, CSS, and Tailwind-CSS.</p>
+              <ul>
+                <li>Javascript</li>
+                <li>HTML</li>
+                <li>CSS</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        <div class="section-header">
+          <h1>Projects</h1>
+          <div class="divider"></div>
+        </div>
+        <section class="projects content-section" data-section="projects-section"></section>
     </section>
   </div>
   <div class="loading-modal">
@@ -542,6 +666,22 @@
           item.classList.remove('selected');
         }
       })
+      scrollToSection(e.target);
+    }
+
+    function scrollToSection(target) {
+      let selectedSection = target
+      let allSections = Array.from(document.querySelectorAll('.content-section'));
+      let sections = {
+        'about': allSections[0],
+        'experience': allSections[1],
+        'projects': allSections[2]
+      };
+      let rect = sections[selectedSection.getAttribute('data-key')].getBoundingClientRect();
+      window.scrollTo({
+        top: rect.top + window.pageYOffset - 130,
+        behavior: 'smooth'
+      });
     }
 
     function getAboutData() {
